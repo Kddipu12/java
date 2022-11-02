@@ -1,47 +1,21 @@
+import java.util.Scanner;
+import java.util.StringTokenizer;
 
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
- 
+public class Token {
+   public static void main(String[] args) {
+       Scanner sc = new Scanner(System.in);
+        System.out.println("enter the limit");
+        int n = sc.nextInt();
+        sc.nextLine();
 
-class file3{
- 
-    
-    public static void main(String[] args)
-    {
- 
-        
- 
-        // Try block to check for exceptions
-        try {
- 
-           
-            FileReader fr = new FileReader("test.txt");
-            String str = "";
- 
-            int i;
-            int sum=0;
- 
-         
-            while ((i = fr.read()) != -1) {
- 
-                // Storing every character in the string
-                str += (char)i;
-                sum = sum + Integer.parseInt(i);
-            }
-            System.out.println("Sum="+sum);
-            System.out.println(str);
-            fr.close();
+        System.out.println("enter the "+ n +"number");
+        String numList = sc.nextLine();
+        StringTokenizer st= new StringTokenizer(numList," ");
+        int sum = 0;
+        while(st.hasMoreTokens()){
+            sum=sum+ Integer.parseInt(st.nextToken());
         }
- 
-        // Catch block to handle the exception
-        catch (IOException e) {
- 
-            
-            System.out.println(
-                "There are some IOException");
-        }
-    }
+        System.out.println("sum="+sum);
+   }
 }
 
- 
